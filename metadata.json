@@ -1,0 +1,6 @@
+{
+  "name": "FleetWise — Warehouse & Delivery Dispatch",
+  "description": "Kovai Central Dispatch Yard fleet allocation and delivery dispatch system. Safe conflict prevention, live operations board, and driver portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

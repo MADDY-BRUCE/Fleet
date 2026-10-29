@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+:root {
+  --yard-bg: #E9E4D8;
+  --yard-black: #111111;
+  --safety-yellow: #FFC20E;
+  --signal-orange: #FF5A1F;
+  --forklift-green: #1F7A4D;
+  --steel-grey: #6B6F72;
+  --rust-red: #B3261E;
+  --chalk-white: #FAF8F5;
+  --card-border: 2px solid #111111;
+  --hard-shadow: 4px 4px 0px #111111;
+  --hard-shadow-lg: 6px 6px 0px #111111;
+  --hard-shadow-sm: 2px 2px 0px #111111;
+}
+
+body {
+  background-color: var(--yard-bg);
+  color: var(--yard-black);
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+}
+
+.font-stencil {
+  font-family: 'Archivo Black', 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', 'Archivo Black', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.font-mono-data {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Hard industrial borders & shadows */
+.brutal-card {
+  background-color: #FAF8F5;
+  border: 2px solid #111111;
+  box-shadow: 4px 4px 0px #111111;
+}
+
+.brutal-card-lg {
+  background-color: #FAF8F5;
+  border: 3px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-card-yellow {
+  background-color: #FFC20E;
+  border: 2px solid #111111;
+  box-shadow: 4px 4px 0px #111111;
+}
+
+.brutal-btn {
+  background-color: #FAF8F5;
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0px #111111;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+}
+
+.brutal-btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #111111;
+}
+
+.brutal-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #111111;
+}
+
+.brutal-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: 2px 2px 0px #6B6F72;
+}
+
+.brutal-btn-primary {
+  background-color: #FFC20E;
+  color: #111111;
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.brutal-btn-primary:hover:not(:disabled) {
+  background-color: #f7b800;
+}
+
+.brutal-btn-danger {
+  background-color: #B3261E;
+  color: #FAF8F5;
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.brutal-btn-danger:hover:not(:disabled) {
+  background-color: #991e17;
+}
+
+.brutal-btn-success {
+  background-color: #1F7A4D;
+  color: #FAF8F5;
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.brutal-btn-success:hover:not(:disabled) {
+  background-color: #18633e;
+}
+
+/* Industrial Hazard Stripes */
+.hazard-stripe-yellow {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FFC20E,
+    #FFC20E 14px,
+    #111111 14px,
+    #111111 28px
+  );
+}
+
+.hazard-stripe-red {
+  background: repeating-linear-gradient(
+    -45deg,
+    #B3261E,
+    #B3261E 14px,
+    #111111 14px,
+    #111111 28px
+  );
+}
+
+.hazard-stripe-orange-animated {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FF5A1F,
+    #FF5A1F 12px,
+    #111111 12px,
+    #111111 24px
+  );
+  background-size: 34px 34px;
+  animation: moveStripes 1.8s linear infinite;
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 34px 0;
+  }
+}
+
+/* Stencil Stamp */
+.stamp {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  border-width: 2px;
+  border-style: solid;
+  transform: rotate(-3deg);
+  user-select: none;
+}
+
+.stamp-green {
+  color: #1F7A4D;
+  border-color: #1F7A4D;
+}
+
+.stamp-red {
+  color: #B3261E;
+  border-color: #B3261E;
+}
+
+.stamp-yellow {
+  color: #8A6400;
+  border-color: #8A6400;
+  background-color: #FFF6D6;
+}
+
+.stamp-orange {
+  color: #D9480F;
+  border-color: #D9480F;
+  background-color: #FFE8CC;
+}
+
+/* Barcode visual */
+.barcode-visual {
+  height: 24px;
+  background: repeating-linear-gradient(
+    90deg,
+    #111 0px,
+    #111 2px,
+    transparent 2px,
+    transparent 4px,
+    #111 4px,
+    #111 7px,
+    transparent 7px,
+    transparent 9px,
+    #111 9px,
+    #111 10px,
+    transparent 10px,
+    transparent 13px,
+    #111 13px,
+    #111 16px,
+    transparent 16px,
+    transparent 17px
+  );
+}
+
+/* Manifest ticket perforation edge */
+.ticket-edge-left {
+  position: relative;
+}
+.ticket-edge-left::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--yard-bg);
+  border-right: 2px solid #111111;
+}
+
+/* Scanline animation for terminal */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.scanline-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline-overlay::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 10;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
